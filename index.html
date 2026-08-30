@@ -306,6 +306,11 @@
   table.tr-t .t{font-variant-numeric:tabular-nums;color:var(--ink-p);font-weight:700;}
   table.tr-t .warn{color:#8A5D08;font-weight:700;}
   table.tr-t .sub{display:block;margin-top:4px;font-size:11.5px;}
+  table.tr-t .opt{display:block;margin-bottom:7px;}
+  table.tr-t .opt:last-child{margin-bottom:0;}
+  table.tr-t .opt-h{font-weight:700;color:var(--ink-p);}
+  table.tr-t .alt{opacity:.45;}
+  table.tr-t .alt .opt-h,table.tr-t .alt .t,table.tr-t .alt b{color:var(--dim-p);}
 
   /* ---------- 交通頁：可收合區塊 ---------- */
   .tr-fold{border:1px solid var(--line-p);border-radius:14px;background:var(--paper-2);
@@ -456,7 +461,7 @@
                 京都站 → 地鐵烏丸線 → 四条，3 分鐘<br>
                 晚上祇園那圈全程走路</td>
             <td data-l="備註"><b>HARUKA 這趟單買</b>，線上買外國旅客票比現場便宜，一樣要劃位。<br>
-                落地還是要去 KIX 換周遊券（啟用日填 09/04），順便把 09/06、09/07 的はしだて指定席一起劃好。<br>
+                落地還是要去 KIX 換周遊券（啟用日填 09/04），順便把 09/06、09/07 的指定席一起劃好。<b>先決定去回程走哪一案再劃</b>，車次不一樣。<br>
                 地鐵那段不在周遊券範圍。</td>
           </tr>
           <tr>
@@ -477,21 +482,25 @@
           <tr>
             <td class="c-date" data-l="日期"><i style="background:#0E86C7"></i>09/06<br>（日）</td>
             <td class="c-area" data-l="地區">京都 → 天橋立 → 伊根</td>
-            <td class="c-route" data-l="主要交通路線">特急はしだて 1 號　京都 <span class="t">08:38</span> → 天橋立 <span class="t">10:39</span><br>
-                天橋立站前轉丹海巴士 → 伊根，約 1 小時<br>
-                <span class="sub">備案：はしだて 3 號 09:25 → 11:31（五六日加開）</span></td>
-            <td data-l="備註"><span class="warn">⚠ 時程頁寫 07:30 發／09:50 到，實際沒有這班車。</span>京都往天橋立最早就是 08:38，到得比原本晚 50 分鐘，伊根那段要重抓。<br>
-                2 日通票這天啟用，巴士和遊覽船都包含。伊根灣遊覽船末班約 16:00。</td>
+            <td class="c-route" data-l="主要交通路線"><span class="opt"><span class="opt-h">去程 A</span>　特急きのさき（城崎號）（京都 → 福知山轉車 → 天橋立）</span>
+                <span class="opt alt"><span class="opt-h">去程 B</span>　特急はしだて（橋立號）（京都 → 天橋立直達）</span>
+                <span class="sub">當地：天橋立觀光船（文珠 ↔ 一の宮）、丹海巴士（天橋立ケーブル下 ↔ 伊根）、伊根灣遊覽船</span></td>
+            <td data-l="備註">A 比 B 早一小時到，多出來的時間<b>全部落在伊根</b>。B 則是晚起一小時。<br>
+                <b>回程巴士要搭下午三點多那班</b>，因為籠神社 17:00 關門，再晚一班到那裡就只剩十幾分鐘。<br>
+                2 日通票這天啟用，巴士和兩艘船都包含。<br>
+                <span class="warn">未確認：</span>きのさき（城崎號）要在福知山轉たんごリレー（丹後接力號），劃位算一次還兩次要問。</td>
           </tr>
           <tr>
             <td class="c-date" data-l="日期"><i style="background:#17A67C"></i>09/07<br>（一）</td>
             <td class="c-area" data-l="地區">天橋立 → 京都 → 河原町</td>
-            <td class="c-route" data-l="主要交通路線">特急はしだて 2 號　天橋立 <span class="t">09:50</span> → 京都 <span class="t">12:07</span><br>
-                下一班是 <span class="t">13:47</span> → 京都 <span class="t">16:06</span><br>
-                <span class="sub">住宿走到天橋立站約 10 分鐘</span></td>
-            <td data-l="備註"><span class="warn">⚠ 時程頁寫 10:30 發／12:40 到，也沒有這班。</span>早上只有 09:50 這班，中間直接跳到下午。<br>
-                要搭 09:50，View Land 就得 08:30 一開門上去、09:20 前下山。<br>
-                View Land 不在 2 日通票內，另外買票。</td>
+            <td class="c-route" data-l="主要交通路線"><span class="opt"><span class="opt-h">回程 A · 青松號（丹後あおまつ号）</span>　丹鐵宮舞線（天橋立 → 西舞鶴）→ JR 舞鶴線（→ 綾部）→ 特急きのさき（城崎號）（→ 京都）</span>
+                <span class="opt alt"><span class="opt-h">回程 B · 區間車</span>　丹鐵宮舞線（天橋立 → 西舞鶴）→ 特急まいづる（舞鶴號）（→ 京都）</span>
+                <span class="sub">兩案都會經過由良川橋梁。住宿走到天橋立站約 10 分鐘</span></td>
+            <td data-l="備註">兩案車程都約 3 小時。A 早走、早到各約一小時，車廂是觀光列車；B 早上多一小時、還吃得到午餐。<br>
+                A 在<b>綾部只有 2 分鐘轉乘</b>，但這是 JR 自己排的接續。真沒接到還有はしだて（橋立號）墊底；B 漏掉就沒有丹鐵備援了。<br>
+                青松號不用整理券，有車票就能搭。きのさき（城崎號）、まいづる（舞鶴號） 都<b>全車指定席</b>，要先劃。<br>
+                View Land 不在 2 日通票內，另外買票，08:30 開門。<br>
+                <span class="warn">未確認：</span>綾部的轉乘月台、B 那班區間車週一有沒有開、西舞鶴まいづる（舞鶴號）的實際發車時刻。</td>
           </tr>
           <tr>
             <td class="c-date" data-l="日期"><i style="background:#E5A93A"></i>09/08<br>（二）</td>
@@ -525,7 +534,7 @@
             </tr>
             <tr>
               <td class="c-key" data-l="項目">周遊券包</td>
-              <td data-l="內容">HARUKA（關西機場↔京都）、特急はしだて（京都↔天橋立，含福知山以北的京都丹後鐵道）、JR 奈良線（京都↔稲荷）等區域內 JR 線。指定席不用再加錢。</td>
+              <td data-l="內容">HARUKA（關西機場↔京都）、特急はしだて（橋立號）（京都↔天橋立，含福知山以北的京都丹後鐵道）、JR 奈良線（京都↔稲荷）等區域內 JR 線。指定席不用再加錢。</td>
             </tr>
             <tr>
               <td class="c-key no" data-l="項目">周遊券不包</td>
@@ -542,7 +551,7 @@
             </tr>
             <tr>
               <td class="c-key" data-l="項目">劃位</td>
-              <td data-l="內容">特急はしだて<b>全車指定席</b>，一定要先劃；HARUKA 也建議先劃。周遊券的指定席前 6 次可在綠色售票機自助操作，第 7 次起要去窗口。<br>
+              <td data-l="內容">特急はしだて（橋立號）、きのさき（城崎號）、まいづる（舞鶴號） 都<b>全車指定席</b>，一定要先劃；HARUKA 也建議先劃。周遊券的指定席前 6 次可在綠色售票機自助操作，第 7 次起要去窗口。<br>
                   這趟只會用到 3～4 次，09/03 換票時就把 09/06、09/07 兩趟一起劃掉。</td>
             </tr>
             <tr>
@@ -627,7 +636,7 @@
       <text class="st n" x="410" y="478">→ 奈良</text>
 
       <text class="hb am" x="56" y="96">→ 天橋立</text>
-      <text class="st am r" x="56" y="79">特急はしだて</text>
+      <text class="st am r" x="72" y="79">特急はしだて 橋立號</text>
       <text class="hb am" x="246" y="426">→ 關西機場</text>
       <text class="st am r" x="246" y="444">HARUKA</text>
 
@@ -817,55 +826,96 @@ const DAYS=[
       ]},
       { k:"eve", range:"17:30 起 · 早收", places:[
         { name:"回住宿 + 附近晚餐（京都河原町）", ...KWR, move:true,
-          time:"17:30", desc:"隔天 07:30 要從京都站出發去天橋立，這晚務必早收、行李先整理好。",
+          time:"17:30", desc:"隔天 07:32 要從京都站出發去天橋立，這晚務必早收、行李先整理好。",
           chips:["京都河原町","早睡"], docs:STAY_KYOTO },
       ]},
     ]},
 
   { n:4, tab:"09/06", date:"09/06 (日)", area:"丹後 · 伊根 · 住天橋立", hex:"#0E86C7",
-    walk:2, walkNote:"以交通為主，伊根要走一段",
+    walk:3, walkNote:"移動多，伊根整段靠走",
     slots:[
-      { k:"am", range:"07:30–10:00 · 移動", places:[
-        { name:"京都站 → 天橋立", ...KST, move:true,
-          time:"07:30 發", desc:"特急はしだて約 2 小時 10 分，一天只有幾班，時刻表要先查、指定席先訂。",
-          chips:["班次少","務必訂位"] },
+      { k:"am", range:"07:32–11:25 · 京都 → 伊根", places:[
+        { name:"前往天橋立", ...KST, move:true,
+          time:"07:32 發", desc:"1. きのさき（城崎號）1 號　京都 07:32 → 福知山轉車 → 天橋立 09:33（採用）<br>2. はしだて（橋立號）1 號　京都 08:38 → 天橋立 10:39",
+          chips:["兩案","務必訂位"] },
+        { name:"天橋立站", ...AMS,
+          time:"09:33", desc:"行李寄置物櫃，輕裝出發。",
+          chips:["寄行李"] },
+        { name:"天橋立觀光船（去程）", lat:35.5585398, lng:135.1847632, pid:"ChIJ28N8dC6R_18RiOh8drFi7ZQ", move:true,
+          time:"10:00", desc:"文珠 10:00 → 一の宮 10:12。每 :00 :30 一班。",
+          chips:["12 分","通票已含"] },
+        { name:"伊根巴士（天橋立ケーブル下 → 伊根湾めぐり・日出）", lat:35.5813, lng:135.1946, move:true,
+          time:"10:26", desc:"10:26 發 → 10:53 到。",
+          chips:["27 分","通票已含"] },
+        { name:"伊根觀光船", lat:35.670564, lng:135.2773675, pid:"ChIJ5dKjhYaf_18RWgwkvOIyeZs",
+          time:"11:00", desc:"繞伊根灣看舟屋。9:00–16:00，每 :00 :30 一班。",
+          chips:["約 25 分","通票已含","天候不佳停開"] },
       ]},
-      { k:"noon", range:"10:00–15:30 · 伊根", places:[
-        { name:"天橋立（抵達）", ...AMA,
-          time:"09:50", desc:"這天先過站直接往伊根，展望台留到隔天早上。",
-          shots:["Kyoto Miyazu Amanohashidate.JPG","Amanohashidate, Japan, photo turned upside down.jpg"],
-          chips:[] },
-        { name:"伊根舟屋", lat:35.675712, lng:135.2874835, pid:"ChIJC1Z_so2f_18RieRebkLKVII",
-          time:"11:30", desc:"天橋立搭巴士約 1 小時。遊覽船末班約 16:00，回程巴士班次少，要先看好時間。",
+      { k:"noon", range:"11:50–15:00 · 伊根散步", places:[
+        { name:"伊根巴士（伊根湾めぐり・日出 → 伊根）", lat:35.670564, lng:135.2773675, move:true,
+          time:"11:50", desc:"11:50 發 → 11:54 到。走路約 20 分，也可以當散步。",
+          chips:["4 分","可用走的"] },
+        { name:"伊根正餐（案內所附近）", lat:35.6758768, lng:135.2878768, pid:"ChIJ_ZE4kpKf_18RPZUq6hlROIM",
+          time:"12:00", desc:"案內所有置物櫃、可免費借腳踏車。",
+          chips:["9:00–17:00"] },
+        { name:"伊根咖啡廳（INE CAFE）", lat:35.6739158, lng:135.290645, pid:"ChIJ293Q95Kf_18RlpYdn08Fr2w",
+          time:"13:00", desc:"舟屋日和二樓，落地窗看舟屋。離案內所約 600 公尺。",
+          chips:["10:30–16:30","週三公休"] },
+        { name:"伊根舟屋（實際參觀）", lat:35.675712, lng:135.2874835, pid:"ChIJC1Z_so2f_18RieRebkLKVII",
+          time:"14:00", desc:"要預約，時段固定。伊根町觀光協會 0772-32-0277。",
           shots:["Funaya in Ine Town, Yosa District, Kyoto Prefecture 001.jpg","Funaya in Ine Town, Yosa District, Kyoto Prefecture 002.jpg","Funaya in Ine Town, Yosa District, Kyoto Prefecture 003.jpg"],
-          chips:["船末班約 16:00","巴士班次少"] },
+          chips:["需預約","時段未定"], tbd:true },
       ]},
-      { k:"pm", range:"15:30–17:00 · 回天橋立", places:[
-        { name:"天橋立駅", ...AMS,
-          time:"17:00", desc:"回天橋立站一帶入住，站走過去約 10 分鐘。一泊二食，晚餐時間要先跟住宿確認。已訂房。",
-          chips:["09/06 住一晚","已訂"], stay:true, docs:STAY_AMA },
+      { k:"pm", range:"15:08–17:00 · 回天橋立", places:[
+        { name:"伊根巴士（伊根 → 天橋立ケーブル下）", lat:35.6758768, lng:135.2878768, move:true,
+          time:"15:08", desc:"15:08 發 → 15:39 到。下一班 16:13，籠神社會只剩十幾分鐘。",
+          chips:["31 分","這班是硬的"] },
+        { name:"丹後一宮 元伊勢 籠神社", lat:35.5826637, lng:135.1966718, pid:"ChIJg1I9UUGX_18RGFp9tn-rMe0",
+          time:"15:45", desc:"巴士站下車就到。",
+          chips:["7:30–17:00","關門早"] },
+        { name:"天橋立觀光船（回程）", lat:35.5813, lng:135.1946, move:true,
+          time:"16:45", desc:"一の宮 16:45 → 文珠 16:57。每 :15 :45 一班。",
+          chips:["12 分","通票已含"] },
+      ]},
+      { k:"eve", range:"17:00 起 · 文珠", places:[
+        { name:"回住宿（天橋立站一帶）", ...AMS, move:true,
+          time:"17:00", desc:"從天橋立站走過去約 10 分鐘。晚餐沒附。已訂房。",
+          chips:["09/06 住一晚","已訂","晚餐未附"], stay:true, docs:STAY_AMA },
+        { name:"天橋立正餐", ...AMS, move:true,
+          time:"18:30", desc:"文珠一帶，小地方收得早，先問住宿哪幾家還開。",
+          chips:["位置為概略","早點吃"] },
       ]},
     ]},
 
-  { n:5, tab:"09/07", date:"09/07 (一)", area:"展望台 → 回京都 → 河原町", hex:"#17A67C",
-    walk:1, walkNote:"上午都在車上，傍晚是室內百貨",
+  { n:5, tab:"09/07", date:"09/07 (一)", area:"天橋立 → 回京都 → 河原町", hex:"#17A67C",
+    walk:3, walkNote:"上午都在走，沙洲來回約 1.6 公里",
     slots:[
-      { k:"am", range:"08:30–12:40 · 展望台 + 回程", places:[
-        { name:"天橋立 View Land", lat:35.5519555, lng:135.1813454, pid:"ChIJ6_0U0DmR_18RavYyKt5Ycog",
-          time:"08:30", desc:"8:30 開門，從住宿走過去約 10 分鐘。搭吊椅或單軌上去，看的是「飛龍觀」角度。",
+      { k:"am", range:"08:30–11:45 · 天橋立", places:[
+        { name:"View Land（飛龍觀）", lat:35.5519555, lng:135.1813454, pid:"ChIJ6_0U0DmR_18RavYyKt5Ycog",
+          time:"08:30", desc:"一開門就上去，人最少。吊椅或單軌。不在通票內，現場買票。",
           shots:["Amanohashidate view from ViewLand.jpg","Amanohashidate view from Mt Moju02s3s4592.jpg","Amanohashidate Viewland.jpg"],
-          chips:["08:30–18:00","吊椅／單軌"] },
-        { name:"天橋立站 → 京都", ...AMS,
-          time:"10:30 發", desc:"回程約 2 小時 10 分，京都約 12:40 到。同樣要先訂指定席。",
-          chips:["務必訂位"], move:true },
+          chips:["08:30–18:00","另外買票"] },
+        { name:"天橋立咖啡廳（Cafe du pin）", lat:35.5580186, lng:135.1847712, pid:"ChIJ6QPfFi6R_18R8xwf8p0JWO0",
+          time:"09:40", desc:"緊鄰迴旋橋。有三明治、咖哩，這天當午餐吃。",
+          chips:["週一 9:00 開","當午餐"] },
+        { name:"天橋立沙洲（走到天橋立神社）", lat:35.5634965, lng:135.1877071, pid:"ChIJSwha6SqR_18RnAzm69el_SI",
+          time:"10:20", desc:"單程約 800 公尺，走到神社折返，不走完全程。",
+          shots:["Kyoto Miyazu Amanohashidate.JPG","Amanohashidate, Japan, photo turned upside down.jpg"],
+          chips:["來回約 1.6 km"] },
+        { name:"智恩寺", lat:35.5583703, lng:135.1841024, pid:"ChIJhfKRCS6R_18RRUqb2HYY5Bo",
+          time:"11:20", desc:"就在桟橋和迴旋橋旁邊。走到車站約 5 分鐘。",
+          chips:["免費","離車站近"] },
+        { name:"天橋立散步", ...AMS,
+          time:"（有時間再走）", desc:"文珠一帶隨意逛，時間不夠就直接進站。",
+          chips:["可省略"] },
       ]},
-      { k:"noon", range:"13:00–16:00 · 吃飯 + 休息", places:[
-        { name:"午餐（京都站一帶）", ...KST, move:true,
-          time:"13:00", desc:"下車就吃，不用再拉車。",
-          chips:["位置為概略"] },
-        { name:"回飯店休息", ...KST, move:true,
-          time:"14:00", desc:"上午坐了兩個多小時車，下午先放空。傍晚再出門逛室內。",
-          chips:["住宿待定","刻意留白"], tbd:true },
+      { k:"noon", range:"12:08–15:10 · 回京都", places:[
+        { name:"回京都（青松號）", ...AMS, move:true,
+          time:"12:08 發", desc:"1. 青松號（丹後あおまつ号）326D　天橋立 12:08 → 西舞鶴 12:50／13:30 → 綾部 13:54／13:56 → 京都 15:06（採用）<br>2. 區間車　天橋立 13:18 → 西舞鶴 13:59／14:36 → 京都 16:06<br>青松號網野 11:34 出發，不用整理券。きのさき（城崎號） 全車指定席。",
+          chips:["由良川橋梁","轉車 2 次","綾部只有 2 分鐘"] },
+        { name:"回住宿放行李（京都河原町）", ...KWR, move:true,
+          time:"15:30", desc:"先放行李再出門。",
+          chips:["京都河原町"], docs:STAY_KYOTO },
       ]},
       { k:"eve", range:"16:30–20:30 · 河原町（都是室內）", places:[
         { name:"Pokémon Center Kyoto", lat:35.0034167, lng:135.7583839, pid:"ChIJVVVVVZQIAWARUox_Y6uZHzw",
