@@ -266,6 +266,69 @@
   .tr-card b{color:var(--ink-p);font-weight:700;}
   .tr-card .eq{color:var(--ink-p);font-weight:500;}
 
+  /* ---------- 交通頁：區塊標題 ---------- */
+  .tr-sec{margin:34px 0 12px;}
+  .tr-sec h3{font-family:var(--serif);font-size:17px;font-weight:700;margin:0 0 5px;letter-spacing:.03em;color:var(--ink-p);}
+  .tr-sec p{margin:0;font-size:12.5px;line-height:1.85;color:var(--dim-p);}
+  .tr-sec p b{color:var(--ink-p);font-weight:700;}
+  .tr-sec a,.tr-foldbody a{color:#1E6FB8;font-weight:700;text-decoration:none;
+                           border-bottom:1px solid rgba(30,111,184,.35);}
+  .tr-sec a:hover,.tr-foldbody a:hover{border-bottom-color:#1E6FB8;}
+  .tr-inner h2{margin-top:0;}
+
+  /* ---------- 交通頁：票券說明 ---------- */
+  .tr-pass{background:var(--paper-2);border:1px solid var(--line-p);border-radius:14px;padding:18px 20px;}
+  .tr-pass dl{margin:0;display:grid;grid-template-columns:96px 1fr;gap:9px 14px;}
+  .tr-pass dt{font-size:12px;font-weight:700;color:var(--ink-p);line-height:1.8;}
+  .tr-pass dd{margin:0;font-size:12.5px;line-height:1.85;color:var(--dim-p);}
+  .tr-pass dd b{color:var(--ink-p);font-weight:700;}
+  .tr-pass .no{color:#8A5D08;font-weight:700;}
+  .tr-gap{margin-top:15px;padding-top:14px;border-top:1px solid var(--line-p);}
+  .tr-gap h4{margin:0 0 7px;font-size:12.5px;font-weight:700;color:var(--ink-p);}
+  .tr-gap ul{margin:0;padding-left:17px;}
+  .tr-gap li{font-size:12.5px;line-height:1.85;color:var(--dim-p);margin-bottom:5px;}
+  .tr-gap li:last-child{margin-bottom:0;}
+  .tr-gap li b{color:var(--ink-p);font-weight:700;}
+
+  /* ---------- 交通頁：每日交通表 ---------- */
+  .tr-tw{border:1px solid var(--line-p);border-radius:14px;overflow:hidden;background:var(--paper-2);}
+  table.tr-t{width:100%;border-collapse:collapse;font-size:12.5px;}
+  table.tr-t th{background:rgba(36,28,31,.06);text-align:left;font-weight:700;font-size:11.5px;
+                letter-spacing:.05em;color:var(--ink-p);padding:10px 14px;border-bottom:1px solid var(--line-p);}
+  table.tr-t td{padding:13px 14px;vertical-align:top;line-height:1.8;color:var(--dim-p);
+                border-bottom:1px solid rgba(36,28,31,.09);}
+  table.tr-t tr:last-child td{border-bottom:0;}
+  table.tr-t .c-date{white-space:nowrap;font-weight:700;color:var(--ink-p);width:88px;}
+  table.tr-t .c-date i{display:block;width:20px;height:3px;border-radius:2px;margin-bottom:6px;}
+  table.tr-t .c-area{width:150px;color:var(--ink-p);}
+  table.tr-t .c-route{width:33%;}
+  table.tr-t b{color:var(--ink-p);font-weight:700;}
+  table.tr-t .t{font-variant-numeric:tabular-nums;color:var(--ink-p);font-weight:700;}
+  table.tr-t .warn{color:#8A5D08;font-weight:700;}
+  table.tr-t .sub{display:block;margin-top:4px;font-size:11.5px;}
+
+  /* ---------- 交通頁：可收合區塊 ---------- */
+  .tr-fold{border:1px solid var(--line-p);border-radius:14px;background:var(--paper-2);
+           margin-bottom:11px;overflow:hidden;}
+  .tr-fold>summary{list-style:none;cursor:pointer;padding:13px 17px;font-size:13px;font-weight:700;
+           color:var(--ink-p);display:flex;align-items:center;gap:9px;user-select:none;}
+  .tr-fold>summary::-webkit-details-marker{display:none;}
+  .tr-fold>summary::before{content:"";width:7px;height:7px;flex:0 0 auto;
+           border-right:1.8px solid var(--ink-p);border-bottom:1.8px solid var(--ink-p);
+           transform:rotate(-45deg);margin-left:2px;transition:transform .18s;}
+  .tr-fold[open]>summary::before{transform:rotate(45deg);}
+  .tr-fold>summary:hover{background:rgba(36,28,31,.04);}
+  .tr-fold>summary .hint{margin-left:auto;font-size:11.5px;font-weight:500;color:var(--dim-p);}
+  .tr-foldbody{border-top:1px solid var(--line-p);}
+  .tr-foldbody ul{margin:0;padding:14px 17px 14px 34px;}
+  .tr-foldbody li{font-size:12.5px;line-height:1.85;color:var(--dim-p);margin-bottom:7px;}
+  .tr-foldbody li:last-child{margin-bottom:0;}
+  .tr-foldbody li b{color:var(--ink-p);font-weight:700;}
+  .tr-foldbody .tr-tw{border:0;border-radius:0;background:transparent;overflow:visible;}
+  .tr-foldbody table.tr-t{background:transparent;}
+  table.tr-t .c-key{width:112px;white-space:nowrap;font-weight:700;color:var(--ink-p);}
+  table.tr-t .no{color:#8A5D08;}
+
   /* ---------- 地圖標記 ---------- */
   .mk{position:relative;}
   .mk i{position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;
@@ -317,6 +380,27 @@
     .tr-map{padding:12px 0 6px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
     .tr-map svg{width:660px;max-width:none;}
     .tr-hint{display:block;}
+    .tr-pass{padding:15px 16px;}
+    .tr-pass dl{grid-template-columns:1fr;gap:2px;}
+    .tr-pass dt{margin-top:8px;}
+    .tr-pass dt:first-child{margin-top:0;}
+    .tr-tw{border:0;border-radius:0;background:transparent;overflow:visible;}
+    table.tr-t,table.tr-t tbody,table.tr-t tr,table.tr-t td{display:block;width:auto;}
+    table.tr-t thead{display:none;}
+    table.tr-t tr{background:var(--paper-2);border:1px solid var(--line-p);border-radius:12px;
+                  padding:13px 15px;margin-bottom:11px;}
+    table.tr-t td{border:0;padding:0;margin-bottom:9px;}
+    table.tr-t td:last-child{margin-bottom:0;}
+    table.tr-t td::before{content:attr(data-l);display:block;font-size:10.5px;letter-spacing:.08em;
+                          font-weight:700;color:var(--ink-p);opacity:.55;margin-bottom:3px;}
+    table.tr-t .c-date::before,table.tr-t .c-date i{display:none;}
+    table.tr-t .c-date{font-size:14px;font-family:var(--serif);}
+    table.tr-t .c-key::before{display:none;}
+    table.tr-t .c-key{font-size:13px;}
+    .tr-foldbody .tr-tw{padding:13px 15px;}
+    .tr-foldbody table.tr-t tr{background:rgba(36,28,31,.04);}
+    .tr-foldbody ul{padding:13px 16px 13px 32px;}
+    .tr-fold>summary{padding:12px 15px;}
     #switch button{padding:8px 11px;font-size:12px;}
     .ag-nav{grid-template-columns:1fr 1fr;}
     .ag-sel{order:-1;grid-column:1 / -1;}
@@ -353,8 +437,128 @@
   <div id="mapWrap"><div id="map"></div></div>
 
   <div id="transit"><div class="tr-inner">
-    <h2>京都軌道交通示意</h2>
-    <p class="tr-lead">依實際地理位置排列，站點有簡化，不是官方路線圖。大圈圈是轉乘站，虛線只表示方向、不是實際距離。<br><b>站名顏色跟著所屬路線</b>；深灰色的站名表示不只一條線經過，也就是轉乘站。</p>
+    <h2>交通</h2>
+    <p class="tr-lead">三塊：每天要注意什麼、票券怎麼算、京都市內軌道路線圖。<br>車次時刻以 JR 西日本官方時刻表（2026/03/14 改點、9 月號）為準，出發前一週再對一次。</p>
+
+    <div class="tr-sec">
+      <h3>每天的交通</h3>
+      <p>只列當天真的要搭的東西。沒寫的日子就是走路解決。</p>
+    </div>
+
+    <div class="tr-tw">
+      <table class="tr-t">
+        <thead><tr><th>日期</th><th>地區</th><th>主要交通路線</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="c-date" data-l="日期"><i style="background:#12B5C9"></i>09/03<br>（四）</td>
+            <td class="c-area" data-l="地區">關西機場 → 京都河原町 → 祇園</td>
+            <td class="c-route" data-l="主要交通路線">HARUKA 關西機場 <span class="t">14:00</span> 前後 → 京都約 <span class="t">15:40</span>，約 80 分<br>
+                京都站 → 地鐵烏丸線 → 四条，3 分鐘<br>
+                晚上祇園那圈全程走路</td>
+            <td data-l="備註"><b>HARUKA 這趟單買</b>，線上買外國旅客票比現場便宜，一樣要劃位。<br>
+                落地還是要去 KIX 換周遊券（啟用日填 09/04），順便把 09/06、09/07 的はしだて指定席一起劃好。<br>
+                地鐵那段不在周遊券範圍。</td>
+          </tr>
+          <tr>
+            <td class="c-date" data-l="日期"><i style="background:#E8452B"></i>09/04<br>（五）</td>
+            <td class="c-area" data-l="地區">東山</td>
+            <td class="c-route" data-l="主要交通路線">幾乎全程步行</td>
+            <td data-l="備註">這天用不到周遊券。<br>
+                06:30 要到清水寺，那個時間公車班次還很稀，要嘛提早走上去、要嘛叫車。</td>
+          </tr>
+          <tr>
+            <td class="c-date" data-l="日期"><i style="background:#8B5CF6"></i>09/05<br>（六）</td>
+            <td class="c-area" data-l="地區">出町柳・下鴨</td>
+            <td class="c-route" data-l="主要交通路線">京阪本線 祇園四条 → 出町柳，約 8 分、不用轉車<br>
+                回程同一條線</td>
+            <td data-l="備註">京阪不在周遊券範圍，這天用現金或 IC 卡。<br>
+                晚上要早收，隔天早上要趕車。</td>
+          </tr>
+          <tr>
+            <td class="c-date" data-l="日期"><i style="background:#0E86C7"></i>09/06<br>（日）</td>
+            <td class="c-area" data-l="地區">京都 → 天橋立 → 伊根</td>
+            <td class="c-route" data-l="主要交通路線">特急はしだて 1 號　京都 <span class="t">08:38</span> → 天橋立 <span class="t">10:39</span><br>
+                天橋立站前轉丹海巴士 → 伊根，約 1 小時<br>
+                <span class="sub">備案：はしだて 3 號 09:25 → 11:31（五六日加開）</span></td>
+            <td data-l="備註"><span class="warn">⚠ 時程頁寫 07:30 發／09:50 到，實際沒有這班車。</span>京都往天橋立最早就是 08:38，到得比原本晚 50 分鐘，伊根那段要重抓。<br>
+                2 日通票這天啟用，巴士和遊覽船都包含。伊根灣遊覽船末班約 16:00。</td>
+          </tr>
+          <tr>
+            <td class="c-date" data-l="日期"><i style="background:#17A67C"></i>09/07<br>（一）</td>
+            <td class="c-area" data-l="地區">天橋立 → 京都 → 河原町</td>
+            <td class="c-route" data-l="主要交通路線">特急はしだて 2 號　天橋立 <span class="t">09:50</span> → 京都 <span class="t">12:07</span><br>
+                下一班是 <span class="t">13:47</span> → 京都 <span class="t">16:06</span><br>
+                <span class="sub">住宿走到天橋立站約 10 分鐘</span></td>
+            <td data-l="備註"><span class="warn">⚠ 時程頁寫 10:30 發／12:40 到，也沒有這班。</span>早上只有 09:50 這班，中間直接跳到下午。<br>
+                要搭 09:50，View Land 就得 08:30 一開門上去、09:20 前下山。<br>
+                View Land 不在 2 日通票內，另外買票。</td>
+          </tr>
+          <tr>
+            <td class="c-date" data-l="日期"><i style="background:#E5A93A"></i>09/08<br>（二）</td>
+            <td class="c-area" data-l="地區">伏見稻荷（未定）→ 錦市場 → 關西機場</td>
+            <td class="c-route" data-l="主要交通路線">JR 奈良線 京都 → 稲荷，約 5 分<br>
+                錦市場走路<br>
+                HARUKA 京都 <span class="t">14:45</span> → 關西機場 <span class="t">16:05</span></td>
+            <td data-l="備註">周遊券最後一天，HARUKA 和 JR 稲荷都在票裡面。<br>
+                19:05 起飛，16:05 到等於提前 3 小時，很寬鬆。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tr-sec">
+      <h3>票券</h3>
+      <p>在 <a href="https://www.klook.com/zh-TW/activity/3277-5-day-kansai-wide-area-jr-pass/" target="_blank" rel="noopener">Klook</a> 買「JR 關西廣域鐵路周遊券 5 日券 ＋ 京都天橋立・伊根觀光 2 日通票」套票，JR 官網套票價 ¥12,900。<br>
+         周遊券<b>從 09/04 起算（09/04–09/08）</b>，09/03 來程 HARUKA 單買。<br>
+         票券文件：<a href="https://drive.google.com/file/d/1LMzRpaMNlO47xr7suVF_Rdb9QlDIJUNE/view?usp=drive_link" target="_blank" rel="noopener">在 Google Drive 開啟</a>（兌換時出示）</p>
+    </div>
+
+    <details class="tr-fold">
+      <summary>包含範圍、劃位、兌換<span class="hint">點開看細節</span></summary>
+      <div class="tr-foldbody"><div class="tr-tw">
+        <table class="tr-t">
+          <tbody>
+            <tr>
+              <td class="c-key" data-l="項目">價格</td>
+              <td data-l="內容">套票 <b>¥12,900</b>。單買周遊券 ¥12,000、2 日通票 ¥3,500，等於通票只多付 ¥900。<br>
+                  光是京都↔天橋立來回（單程 ¥5,000）加一趟 HARUKA 就超過票價，一定回本。</td>
+            </tr>
+            <tr>
+              <td class="c-key" data-l="項目">周遊券包</td>
+              <td data-l="內容">HARUKA（關西機場↔京都）、特急はしだて（京都↔天橋立，含福知山以北的京都丹後鐵道）、JR 奈良線（京都↔稲荷）等區域內 JR 線。指定席不用再加錢。</td>
+            </tr>
+            <tr>
+              <td class="c-key no" data-l="項目">周遊券不包</td>
+              <td data-l="內容"><b>京阪、阪急、京都地鐵、市公車全部不包。</b>09/03 京都站到四条、09/05 去出町柳，都要自己付。<br>
+                  自費的軌道全趟大概 3 趟、不到 ¥700，帶一張 IC 卡就夠，不用買一日券。</td>
+            </tr>
+            <tr>
+              <td class="c-key" data-l="項目">2 日通票包</td>
+              <td data-l="內容">宮津・伊根一帶的丹海路線巴士、天橋立觀光船、伊根灣遊覽船、傘松公園纜車／吊椅、成相寺登山巴士（成相寺入山料另計）。連續 2 天無限次。</td>
+            </tr>
+            <tr>
+              <td class="c-key no" data-l="項目">2 日通票不包</td>
+              <td data-l="內容"><b>天橋立 View Land 不在裡面。</b>通票包的是對岸北側的傘松公園（昇龍觀）；View Land 在南側文珠、是另一家公司，往返吊椅／單軌含入園大人約 ¥850–900，現場買。</td>
+            </tr>
+            <tr>
+              <td class="c-key" data-l="項目">劃位</td>
+              <td data-l="內容">特急はしだて<b>全車指定席</b>，一定要先劃；HARUKA 也建議先劃。周遊券的指定席前 6 次可在綠色售票機自助操作，第 7 次起要去窗口。<br>
+                  這趟只會用到 3～4 次，09/03 換票時就把 09/06、09/07 兩趟一起劃掉。</td>
+            </tr>
+            <tr>
+              <td class="c-key" data-l="項目">兌換</td>
+              <td data-l="內容">周遊券在 KIX 的 JR 售票處或綠色售票機換，一早就開。<br>
+                  2 日通票有旅客回報要到<b>天橋立當地</b>才能換、不能在機場換，下訂前再跟 Klook 確認一次。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div></div>
+    </details>
+
+    <div class="tr-sec">
+      <h3>京都軌道交通示意</h3>
+      <p>依實際地理位置排列，站點有簡化，不是官方路線圖。大圈圈是轉乘站，虛線只表示方向、不是實際距離。<b>站名顏色跟著所屬路線</b>；深灰色的站名表示不只一條線經過，也就是轉乘站。</p>
+    </div>
 
     <div class="tr-map">
     <svg viewBox="0 0 680 600" role="img" aria-label="京都地鐵與私鐵路線示意圖，站名依所屬路線上色，含往關西機場與天橋立方向">
@@ -451,30 +655,10 @@
         <p>阪急<b>京都河原町</b>和京阪<b>祇園四条</b>隔一條鴨川，走路約 5 分鐘。</p>
       </div>
       <div class="tr-card">
-        <h3>地鐵只有兩條線</h3>
-        <p>綠色烏丸線（南北）和橘色東西線，在<b>烏丸御池</b>交叉。</p>
-        <p>京都的軌道覆蓋率不高，金閣寺、銀閣寺、大德寺這類景點都得靠公車。</p>
-      </div>
-      <div class="tr-card">
-        <h3>這趟會用到的路段</h3>
-        <p>京都站 ↔ 四条：綠線 3 分鐘。</p>
-        <p>09/05 出町柳、下鴨：京阪本線，祇園四条直達。</p>
-        <p>09/08 伏見稻荷：京阪祇園四条 → 伏見稲荷，或 JR 京都 → 稲荷。</p>
-      </div>
-      <div class="tr-card">
-        <h3>往天橋立（左上虛線）</h3>
-        <p>特急はしだて走 JR 嵯峨野線（山陰本線），經二条、亀岡、福知山，再轉京都丹後鐵道，全程約 <b>2 小時 10 分</b>。</p>
-        <p>京都市內只停京都、二条，<b>不停嵯峨嵐山</b>，圖上只是走同一條軌道經過。班次少，指定席要先訂。</p>
-      </div>
-      <div class="tr-card">
-        <h3>往關西機場（左下虛線）</h3>
-        <p>HARUKA 從京都站往南進大阪，經新大阪、大阪（梅田）、天王寺後才轉西南出海，所以方向是往下、不是往西。</p>
-        <p>京都站直達約 <b>75–80 分鐘</b>，每小時 2 班。全車指定席，線上買外國旅客優惠票比現場便宜。</p>
-      </div>
-      <div class="tr-card">
-        <h3>不經京都站也能到大阪</h3>
-        <p>京阪本線從祇園四条一路到大阪淀屋橋，阪急從京都河原町到大阪梅田，都不用繞 JR 京都站。</p>
-        <p>這是住鴨川一帶的隱藏好處。</p>
+        <h3>看圖要注意的三件事</h3>
+        <p>地鐵只有兩條：綠色烏丸線（南北）和橘色東西線，在<b>烏丸御池</b>交叉。京都軌道覆蓋率不高，金閣寺、銀閣寺這類景點都得靠公車。</p>
+        <p>左上往天橋立的虛線只是方向示意。特急走 JR 嵯峨野線，京都市內只停京都、二条，<b>不停嵯峨嵐山</b>。</p>
+        <p>左下往關西機場的虛線也是。HARUKA 從京都往南進大阪，經新大阪、大阪、天王寺才轉西南出海，所以畫成往下、不是往西。</p>
       </div>
     </div>
   </div></div>
