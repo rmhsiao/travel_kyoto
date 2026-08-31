@@ -33,11 +33,12 @@
     transition:left .32s cubic-bezier(.4,0,.2,1);
   }
   body.collapsed #stage{left:0;}
-  #mapWrap,#agenda,#transit{position:absolute;inset:0;}
+  #mapWrap,#agenda,#transit,#notes{position:absolute;inset:0;}
   #map{position:absolute;inset:0;background:#dfe3e6;}
   body:not([data-view="map"]) #mapWrap{visibility:hidden;}
   body:not([data-view="agenda"]) #agenda{display:none;}
   body:not([data-view="transit"]) #transit{display:none;}
+  body:not([data-view="notes"]) #notes{display:none;}
 
   /* ---------- 開合鈕 ---------- */
   #toggle{
@@ -127,8 +128,8 @@
           background-color:var(--paper);
           background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220' fill='%23C77E8D' fill-opacity='.115'><defs><path id='p' d='M0,0C3.6-4 4.6-9 1.3-12.6L0-10.9-1.3-12.6C-4.6-9-3.6-4 0 0Z'/><g id='f'><use href='%23p'/><use href='%23p' transform='rotate(72)'/><use href='%23p' transform='rotate(144)'/><use href='%23p' transform='rotate(216)'/><use href='%23p' transform='rotate(288)'/><circle r='1.5' opacity='.6'/></g></defs><use href='%23f' transform='translate(48,44) rotate(14)'/><use href='%23f' transform='translate(158,96) scale(.78) rotate(-28)' opacity='.85'/><use href='%23f' transform='translate(96,168) scale(.62) rotate(40)' opacity='.75'/><use href='%23f' transform='translate(198,198) scale(.9) rotate(8)' opacity='.9'/><use href='%23f' transform='translate(6,152) scale(.7) rotate(-15)' opacity='.8'/><use href='%23p' transform='translate(120,26) rotate(58)' opacity='.7'/><use href='%23p' transform='translate(30,110) rotate(-70)' opacity='.65'/><use href='%23p' transform='translate(178,142) rotate(120)' opacity='.6'/></svg>");
           background-size:220px 220px;background-attachment:local;}
-  #agenda::-webkit-scrollbar,#transit::-webkit-scrollbar{width:9px;}
-  #agenda::-webkit-scrollbar-thumb,#transit::-webkit-scrollbar-thumb{background:rgba(36,28,31,.2);border-radius:4px;}
+  #agenda::-webkit-scrollbar,#transit::-webkit-scrollbar,#notes::-webkit-scrollbar{width:9px;}
+  #agenda::-webkit-scrollbar-thumb,#transit::-webkit-scrollbar-thumb,#notes::-webkit-scrollbar-thumb{background:rgba(36,28,31,.2);border-radius:4px;}
   .ag-inner,.tr-inner{margin:0 auto;padding:64px 26px 78px;}
   .ag-inner{width:75%;max-width:1120px;}
 
@@ -227,7 +228,7 @@
   .chip.tbd{background:transparent;border:1px dashed rgba(184,124,14,.6);color:#8A5D08;}
 
   /* ---------- 交通示意（米白紙面） ---------- */
-  #transit{overflow-y:auto;color:var(--ink-p);background:var(--paper);scroll-behavior:smooth;}
+  #transit,#notes{overflow-y:auto;color:var(--ink-p);background:var(--paper);scroll-behavior:smooth;}
   .tr-inner{width:82%;max-width:980px;}
   .tr-inner h2{font-family:var(--serif);font-size:22px;font-weight:700;margin:0 0 6px;letter-spacing:.04em;}
   .tr-lead{margin:0 0 22px;font-size:12.5px;line-height:1.85;color:var(--dim-p);}
@@ -334,6 +335,16 @@
   table.tr-t .c-key{width:112px;white-space:nowrap;font-weight:700;color:var(--ink-p);}
   table.tr-t .no{color:#8A5D08;}
 
+  /* ---------- 注意事項頁 ---------- */
+  .nt-src{margin:16px 2px 0;font-size:11px;letter-spacing:.08em;font-weight:700;
+          color:var(--ink-p);opacity:.5;}
+  .nt-ref{margin:7px 0 0;padding:0;list-style:none;}
+  .nt-ref li{font-size:12.5px;line-height:1.85;color:var(--dim-p);margin-bottom:5px;}
+  .nt-ref li:last-child{margin-bottom:0;}
+  .nt-ref a{color:#1E6FB8;font-weight:700;text-decoration:none;
+            border-bottom:1px solid rgba(30,111,184,.35);}
+  .nt-ref a:hover{border-bottom-color:#1E6FB8;}
+
   /* ---------- 地圖標記 ---------- */
   .mk{position:relative;}
   .mk i{position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;
@@ -406,7 +417,7 @@
     .tr-foldbody table.tr-t tr{background:rgba(36,28,31,.04);}
     .tr-foldbody ul{padding:13px 16px 13px 32px;}
     .tr-fold>summary{padding:12px 15px;}
-    #switch button{padding:8px 11px;font-size:12px;}
+    #switch button{padding:8px 9px;font-size:11.5px;}
     .ag-nav{grid-template-columns:1fr 1fr;}
     .ag-sel{order:-1;grid-column:1 / -1;}
     .mk b{font-size:11px;padding:3px 7px;}
@@ -419,7 +430,7 @@
 <aside id="panel">
   <div class="head">
     <h1>京都行程 09/03–09/08</h1>
-    <p>上面選日期可跳到當天。點地點看細節，右上角切換時程／地圖／交通。</p>
+    <p>上面選日期可跳到當天。點地點看細節，右上角切換時程／地圖／交通／注意事項。</p>
   </div>
   <div class="tabs" id="tabs"></div>
   <div class="list" id="list"></div>
@@ -437,6 +448,7 @@
     <button id="vAgenda" class="on" aria-pressed="true">當日時程</button>
     <button id="vMap" aria-pressed="false">地圖</button>
     <button id="vTransit" aria-pressed="false">交通</button>
+    <button id="vNotes" aria-pressed="false">注意事項</button>
   </div>
   <div id="agenda"><div class="ag-inner" id="agInner"></div></div>
   <div id="mapWrap"><div id="map"></div></div>
@@ -669,6 +681,60 @@
         <p>左上往天橋立的虛線只是方向示意。特急走 JR 嵯峨野線，京都市內只停京都、二条，<b>不停嵯峨嵐山</b>。</p>
         <p>左下往關西機場的虛線也是。HARUKA 從京都往南進大阪，經新大阪、大阪、天王寺才轉西南出海，所以畫成往下、不是往西。</p>
       </div>
+    </div>
+  </div></div>
+
+  <div id="notes"><div class="tr-inner">
+    <h2>注意事項</h2>
+    <p class="tr-lead">出發前照這頁再檢查一次行李。規定以中華航空官網為準，臨行前一週再看一次有沒有改。</p>
+
+    <div class="tr-sec">
+      <h3>飛機行李規定</h3>
+      <p>托運和隨身分開算。<b>行動電源和銳利物品最容易搞錯</b>，一個只能隨身、一個只能托運。</p>
+    </div>
+
+    <div class="tr-tw">
+      <table class="tr-t">
+        <tbody>
+          <tr>
+            <td class="c-key" data-l="項目">托運行李</td>
+            <td data-l="內容"><b>一件</b>，需 <b>23 公斤</b>以下。</td>
+          </tr>
+          <tr>
+            <td class="c-key" data-l="項目">隨身行李</td>
+            <td data-l="內容">可帶<b>兩件</b>：手提行李 ＋ 個人物品各一。<br>
+                手提行李需 <b>7 公斤</b>以下。</td>
+          </tr>
+          <tr>
+            <td class="c-key warn" data-l="項目">行動電源</td>
+            <td data-l="內容"><b class="warn">必須隨身，最多兩個。</b></td>
+          </tr>
+          <tr>
+            <td class="c-key" data-l="項目">液體、膠狀</td>
+            <td data-l="內容">每樣都不超過 <b>100 毫升</b>，且須裝入透明夾鏈袋，安檢時要拿出來出示。<br>
+                超出的放進托運行李。</td>
+          </tr>
+          <tr>
+            <td class="c-key warn" data-l="項目">銳利物品</td>
+            <td data-l="內容"><b class="warn">必須托運</b>，含剪刀、指甲剪。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="nt-src">參考來源 · 中華航空官網，出發前可以再對一次</p>
+    <ul class="nt-ref">
+        <li><a href="https://www.china-airlines.com/tw/zh/prepare-for-the-fly/information/baggage/carry-on-baggage?tab=BasicRegulationsTab" target="_blank" rel="noopener">隨身行李規範</a></li>
+        <li><a href="https://www.china-airlines.com/tw/zh/prepare-for-the-fly/information/baggage/carry-on-baggage?tab=SpecialItemsTab" target="_blank" rel="noopener">特殊物品規範</a></li>
+        <li><a href="https://www.china-airlines.com/tw/zh/prepare-for-the-fly/information/baggage/dangerous-goods?tab=LithiumBatteries" target="_blank" rel="noopener">鋰電池裝置規範</a></li>
+    </ul>
+
+    <div class="tr-sec">
+      <h3>網路</h3>
+      <p>用<b>台灣大哥大預付卡「漫遊通」</b>，日本 <b>6 日 $468</b>、上網吃到飽。09/03–09/08 剛好 6 天。</p>
+      <ul class="nt-ref">
+        <li><a href="https://www.taiwanmobile.com/mobile/prepaid/prepaidRoam/jp.html?tab=small-2-1" target="_blank" rel="noopener">方案說明（台灣大哥大官網）</a></li>
+      </ul>
     </div>
   </div></div>
 </div>
@@ -1169,7 +1235,7 @@ function select(i,fromRow){
     if(fromRow) map.flyTo([all[i].lat,all[i].lng],15,{duration:.9});
     markers[mi].openPopup();
   }else{
-    if(view==="transit") setView("agenda");
+    if(view==="transit"||view==="notes") setView("agenda");
     markAgenda(i);
     document.getElementById("ag-"+i)?.scrollIntoView({block:"center"});
   }
@@ -1201,15 +1267,15 @@ function goDay(di,scroll){
 /* ---------------- 檢視切換 ---------------- */
 let view="agenda";
 const bAgenda=document.getElementById("vAgenda"), bMap=document.getElementById("vMap"),
-      bTransit=document.getElementById("vTransit");
+      bTransit=document.getElementById("vTransit"), bNotes=document.getElementById("vNotes");
 function setView(v){
   view=v;
   document.body.dataset.view=v;
-  [[bAgenda,"agenda"],[bMap,"map"],[bTransit,"transit"]].forEach(([b,k])=>{
+  [[bAgenda,"agenda"],[bMap,"map"],[bTransit,"transit"],[bNotes,"notes"]].forEach(([b,k])=>{
     b.classList.toggle("on",v===k);
     b.setAttribute("aria-pressed",String(v===k));
   });
-  if(v==="transit") return;
+  if(v==="transit"||v==="notes") return;
   if(v==="map"){
     map.invalidateSize();
     setTimeout(()=>{
@@ -1229,6 +1295,7 @@ function setView(v){
 bAgenda.addEventListener("click",()=>setView("agenda"));
 bMap.addEventListener("click",()=>setView("map"));
 bTransit.addEventListener("click",()=>setView("transit"));
+bNotes.addEventListener("click",()=>setView("notes"));
 
 /* ---------------- 地圖範圍 ---------------- */
 function labelMarkers(di){
