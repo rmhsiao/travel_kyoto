@@ -771,6 +771,10 @@ const BOARDING=[
   { t:"登機證 A", u:"https://drive.google.com/file/d/1EHwMhuZI-eavzasMk4s5IOjpijCCH2Aj/view?usp=drive_link" },
   { t:"登機證 J", u:"https://drive.google.com/file/d/1Z5VA7l607zfeh8OMVSuFLautlIXd5wUx/view?usp=drive_link" },
 ];
+const VJW=[
+  { t:"Visit Japan Web QR A", u:"https://drive.google.com/file/d/1q4l0AwCAlGiUGTDQzFES3O-EDUboZXsz/view?usp=drive_link" },
+  { t:"Visit Japan Web QR J", u:"https://drive.google.com/file/d/1yrYz8lkAQGXp2AOjX0kxO16WAH9OJp1T/view?usp=drive_link" },
+];
 const STAY_KYOTO=[
   { t:"住宿文件（中文）", u:"https://drive.google.com/file/d/1Q85-jmLAkHwoRwNqHr50MTaYWg4Q9_us/view?usp=drive_link" },
   { t:"住宿文件（日文）", u:"https://drive.google.com/file/d/1GhjFhu5e-YTTHIGTcxy5lEOubcwXO4Px/view?usp=drive_link" },
@@ -792,7 +796,7 @@ const DAYS=[
         { name:"關西機場 KIX（T1）", ...KIX,
           time:"12:50 落地", desc:"日本時間 12:50 到第一航廈。入境加提行李抓 60 分鐘，14:00 前後上 HARUKA，京都站約 15:40。",
           shots:["Kansai International Airport Terminal.JPG","Kansai International Airport01n4272.jpg","関西国際空港全体写真20220811.jpg"],
-          chips:["Terminal 1","HARUKA 約 80 分"], move:true },
+          chips:["Terminal 1","HARUKA 約 80 分"], move:true, docs:VJW },
         { name:"京都河原町（放行李）", ...KWR, move:true,
           time:"16:00", desc:"從京都站過去約 10 分鐘。09/03–09/05 三晚都住這裡，先放行李再出門。",
           chips:["京都河原町","三晚同一間"], stay:true, docs:STAY_KYOTO },
