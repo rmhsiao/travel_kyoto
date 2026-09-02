@@ -767,6 +767,10 @@ const ETICKET=[
   { t:"電子機票 A", u:"https://drive.google.com/file/d/1jA8sEEmI6DWdsdBg5Ebru7GxGj5x-yIf/view?usp=sharing" },
   { t:"電子機票 J", u:"https://drive.google.com/file/d/1rKyLe_-z3P3rfyy-SBnlVupIoWqOZU-P/view?usp=drive_link" },
 ];
+const BOARDING=[
+  { t:"登機證 A", u:"https://drive.google.com/file/d/1EHwMhuZI-eavzasMk4s5IOjpijCCH2Aj/view?usp=drive_link" },
+  { t:"登機證 J", u:"https://drive.google.com/file/d/1Z5VA7l607zfeh8OMVSuFLautlIXd5wUx/view?usp=drive_link" },
+];
 const STAY_KYOTO=[
   { t:"住宿文件（中文）", u:"https://drive.google.com/file/d/1Q85-jmLAkHwoRwNqHr50MTaYWg4Q9_us/view?usp=drive_link" },
   { t:"住宿文件（日文）", u:"https://drive.google.com/file/d/1GhjFhu5e-YTTHIGTcxy5lEOubcwXO4Px/view?usp=drive_link" },
@@ -782,7 +786,7 @@ const DAYS=[
       { k:"am", range:"09:00–12:50 · 去程", places:[
         { name:"桃園機場 T2（TPE）", ...TPE, move:true,
           time:"09:00 起飛", desc:"中華航空，第二航廈出發。台灣時間 09:00 起飛。",
-          chips:["中華航空","Terminal 2"], docs:ETICKET },
+          chips:["中華航空","Terminal 2"], docs:[...ETICKET,...BOARDING] },
       ]},
       { k:"pm", range:"12:50–16:30 · 進京都", places:[
         { name:"關西機場 KIX（T1）", ...KIX,
