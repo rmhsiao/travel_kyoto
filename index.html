@@ -774,7 +774,7 @@ const SLOTS={
 
 /* ---------------- 文件連結 ----------------
    機票：去回程同一份，掛在 09/03 出發和 09/08 回程兩張卡。
-   住宿：09/03–09/05 京都河原町（中／日文各一份），09/06 天橋立一份。 */
+   住宿：09/03–09/05 京都河原町（中／日文各一份），09/06 天橋立一份，09/07 京都（中／日文各一份）。 */
 const ETICKET=[
   { t:"電子機票 A", u:"https://drive.google.com/file/d/1jA8sEEmI6DWdsdBg5Ebru7GxGj5x-yIf/view?usp=sharing" },
   { t:"電子機票 J", u:"https://drive.google.com/file/d/1rKyLe_-z3P3rfyy-SBnlVupIoWqOZU-P/view?usp=drive_link" },
@@ -790,6 +790,10 @@ const VJW=[
 const STAY_KYOTO=[
   { t:"住宿文件（中文）", u:"https://drive.google.com/file/d/1Q85-jmLAkHwoRwNqHr50MTaYWg4Q9_us/view?usp=drive_link" },
   { t:"住宿文件（日文）", u:"https://drive.google.com/file/d/1GhjFhu5e-YTTHIGTcxy5lEOubcwXO4Px/view?usp=drive_link" },
+];
+const STAY_KYOTO2=[
+  { t:"住宿文件（中文）", u:"https://drive.google.com/file/d/1j_eUXKoKOlyN39LTTIZBBYeFhhmdUuaE/view?usp=drive_link" },
+  { t:"住宿文件（日文）", u:"https://drive.google.com/file/d/1B0AQ4U6LXCRc_R-BZZ4IZ6kActOkt_PD/view?usp=drive_link" },
 ];
 const STAY_AMA=[
   { t:"住宿文件", u:"https://drive.google.com/file/d/1JzKyJ1jVqz6yYsZjTmWF4ykn5KqhLNi8/view?usp=drive_link" },
@@ -1005,7 +1009,7 @@ const DAYS=[
           chips:["由良川橋梁","轉車 2 次","綾部只有 2 分鐘"] },
         { name:"回住宿放行李（京都河原町）", ...KWR, move:true,
           time:"15:30", desc:"先放行李再出門。",
-          chips:["京都河原町"], docs:STAY_KYOTO },
+          chips:["京都河原町"], stay:true, docs:STAY_KYOTO2 },
       ]},
       { k:"eve", range:"16:30–20:30 · 河原町（都是室內）", places:[
         { name:"Pokémon Center Kyoto", lat:35.0034167, lng:135.7583839, pid:"ChIJVVVVVZQIAWARUox_Y6uZHzw",
@@ -1034,9 +1038,9 @@ const DAYS=[
           time:"09:30", desc:"店家 9:30–10:00 才開。週二早上人比週末少，是最好逛的時段。",
           shots:["Nishiki ichiba kyoto.jpg","Flickr - yeowatzup - Nishiki Shotengai, Kyoto, Japan.jpg","Hirousu in Nishiki market, Kyoto.JPG"],
           chips:["備現金","禁邊走邊吃"] },
-        { name:"午餐 + 回飯店拿行李", ...KST, move:true,
+        { name:"午餐 + 回飯店拿行李", ...KWR, move:true,
           time:"11:30", desc:"吃完回去拿行李，13:30 前要回到京都站。",
-          chips:["住宿待定"], tbd:true },
+          chips:["京都河原町"], docs:STAY_KYOTO2 },
       ]},
       { k:"pm", range:"14:45–21:10 · 回程", places:[
         { name:"京都站 → KIX（T1）", ...KIX,
