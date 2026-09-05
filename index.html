@@ -1040,7 +1040,18 @@ document.addEventListener("keydown",e=>{
 });
 
 if(window.innerWidth<=760) setCollapsed(true);
-goDay(0,false);
+
+/* 開頁時若今天正好在行程六天內，直接跳到當天；不在的話一律從第一天開始。
+   比對用裝置本機時間（行程期間就是日本時間），年份對不上也不會誤判。 */
+const TRIP_YEAR=2026;
+function todayIndex(){
+  const now=new Date();
+  if(now.getFullYear()!==TRIP_YEAR) return -1;
+  const md=String(now.getMonth()+1).padStart(2,"0")+"/"+String(now.getDate()).padStart(2,"0");
+  return DAYS.findIndex(d=>d.tab===md);
+}
+const startDay=todayIndex();
+goDay(startDay<0?0:startDay, startDay>0);
 fit(bAll); syncLabels();
 </script>
 </body>
